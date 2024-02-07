@@ -1,0 +1,10 @@
+.signature {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.signature>div>span:first-child {
+    margin-right: 5px;
+    margin-left: 40px;
+}

@@ -1,0 +1,115 @@
+.photoContainer {
+    display: flex;
+    align-items: baseline;
+}
+
+.photoContainer>span {
+    margin-right: 27px;
+    margin-top: 25px;
+    margin-bottom: 32px;
+}
+
+form input[type=file] {
+    display: none;
+}
+
+#photoLabel {
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 18px;
+    color: #828282;
+}
+
+.userEditInfoContainer--form input {
+    background: transparent;
+    border: 1px solid #828282;
+    box-sizing: border-box;
+    border-radius: 12px;
+    height: 52px;
+    filter: invert(50%);
+}
+
+.userEditInfoContainer--form label {
+    font-family: Noto Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: -0.035em;
+}
+
+.userEditInfoContainer--form textarea {
+    background: transparent;
+    border: 1px solid #828282;
+    box-sizing: border-box;
+    border-radius: 12px;
+    height: 92px;
+    filter: invert(50%);
+}
+
+.userEditInfoContainer--form input:focus-within {
+    background-color: transparent;
+}
+
+.userEditInfoContainer--form textarea:focus-within {
+    background-color: transparent;
+}
+
+.userEditInfoContainer--form__button {
+    background: #2F80ED;
+    border-radius: 8px;
+    font-family: Noto Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: -0.035em;
+    color: #FFFFFF;
+    width: 82px;
+    height: 38px;
+}
+
+.userEditInfoContainer>h1 {
+    font-size: 24px;
+    line-height: 33px;
+}
+
+.userEditInfoContainer--form {
+    width: 50%;
+    font-family: Noto Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: -0.035em;
+}
+
+.userEditInfoContainer>span {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+.cameraIcon {
+    position: absolute;
+    top: 200px;
+    left: 75px
+}
+
+@keyframes camera {
+    0% {
+        transform: scale(1);
+        color: azure;
+    }
+
+    50% {
+        transform: scale(1.1);
+        color: #E0E0E0;
+    }
+
+    100% {
+        transform: scale(1);
+        color: #f36f60;
+    }
+}

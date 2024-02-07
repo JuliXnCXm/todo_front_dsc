@@ -1,0 +1,45 @@
+.authenticationContainer {
+    max-width: 483px;
+    margin: 149px auto;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #BDBDBD;
+    box-sizing: border-box;
+    border-radius: 24px;
+    font-family: Noto Sans;
+    font-style: normal;
+    font-weight: normal;
+    text-align: start;
+    padding: 50px;
+    letter-spacing: -0.035em;
+}
+
+.content-container {
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.content-container__text > h3, p{
+    margin: 15px 0px;
+    padding-right: 35px;
+}
+
+.content-container__text > h3{
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 25px;
+}
+
+.content-container__image {
+    margin: 20px 0px;
+    fill: currentColor;
+
+}
+
+@media screen and (max-width: 768px) {
+    .authenticationContainer {
+        margin: 0px auto;
+        border: none;
+    }
+}
+

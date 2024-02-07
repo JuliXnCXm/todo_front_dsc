@@ -1,0 +1,28 @@
+.userContainer{
+    border-radius: 30px;
+    position: relative;
+    bottom: 53px;
+}
+
+.userContainer--title > h1 {
+    font-family: Noto Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 49px;
+}
+.userContainer--title > h3 {
+    font-family: Noto Sans;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: -0.035em;
+    margin-bottom: 40px;
+}
+
+@media screen and (max-width: 768px) {
+    .userContainer {
+        top:5px
+    }
+}
