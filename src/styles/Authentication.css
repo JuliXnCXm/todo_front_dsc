@@ -32,6 +32,7 @@
 
 .content-container__image {
     margin: 20px 0px;
+    width: 60px;
     fill: currentColor;
 
 }

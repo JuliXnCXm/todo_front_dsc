@@ -1,0 +1,54 @@
+.task_container {
+    border-bottom: 2px solid rgba(38, 34, 34, 0.3);
+    display: flex;
+    justify-content: start;
+    padding: 20px;
+}
+
+.task_container > h1 {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: -0.035em;
+    margin: 0 !important;
+    text-align: center;
+    color: rgba(38, 34, 34, 0.8);
+    padding-top: 5px;
+    padding-left: 21px;
+}
+
+.task_data p {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.035em;
+    margin: 0!important;
+    text-align: center;
+    color: rgba(38, 34, 34, 0.8);
+    padding-top: 5px;
+    padding-left: 21px;
+}
+
+.circle {
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid;
+    width: 30px;
+    height: 30px;
+}
+
+.circle:hover {
+    background-color: rgba(27, 21, 21, 0.7);
+    cursor: pointer;
+}
+
+.task_container_data-status {
+    color: white;
+    padding: 5px;
+    border-radius: 2px;
+}
+
+.task_container_data {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}

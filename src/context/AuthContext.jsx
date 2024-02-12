@@ -1,14 +1,13 @@
 import { React, createContext, useState, useEffect } from "react";
 import { apiRegister, apiLogin, serverUser } from "./Api";
-import { useNavigate } from "react-router";
 import Cookies from "universal-cookie";
-
+import { useNavigate } from "react-router";
 const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
   const [auth, setAuth] = useState(false);
-  const navigate = useNavigate();
   const cookie = new Cookies();
+  const navigate = useNavigate();
   const [user, setUser] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [token, setToken] = useState(cookie.get("token"));
@@ -19,17 +18,24 @@ const AuthProvider = ({ children }) => {
     }
   }, []);
 
+  useEffect(() => {
+    if (auth) {
+      console.log("Auth")
+    }
+  }, [auth])
+
   const getUser = async () => {
     fetch(`${serverUser}`, {
       method: "GET",
       headers: {
-        Authorization: `Bearer ${token}`,
+        authorization: `Bearer ${cookie.get("token")}`,
       },
     })
       .then(async (res) => {
         if (res.status === 200) {
           let json = await res.json();
           setUser(json.user);
+          cookie.set("user", JSON.stringify(json.user));
           if (user !== undefined) {
             setTimeout(() => {
               setIsLoading(false);
@@ -38,19 +44,20 @@ const AuthProvider = ({ children }) => {
         } else {
           console.log("Error");
           setTimeout(() => {
-            window.location.href = "/";
+            navigate("/login")
           }, 3000);
         }
       })
       .catch((err) => {
-        console.log(err);
+        alert(err)
         setTimeout(() => {
-          window.location.href = "/";
+          navigate("/login")
         }, 3000);
       });
   };
 
   const handleRegister = (userData) => {
+    console.log(userData);
     fetch(apiRegister, {
       method: "POST",
       headers: {
@@ -63,7 +70,9 @@ const AuthProvider = ({ children }) => {
         if (res.status === 201) {
           let json = await res.json();
           cookie.set("token", json.token, { path: "/" });
+          setToken(cookie.get("token"));
           setAuth(true);
+          navigate("/user")
         } else {
           console.log("Error");
         }
@@ -86,11 +95,11 @@ const AuthProvider = ({ children }) => {
           let json = await resp.json();
           cookie.set("token", json.token, { path: "/" });
           setAuth(true);
-          navigate(`/user`);
+          navigate(`/all`);
         } else {
           setAuth(false);
           console.log("Error");
-          navigate(`/`);
+          navigate(`/login`);
         }
       })
       .finally();
@@ -100,7 +109,7 @@ const AuthProvider = ({ children }) => {
     cookie.remove("token", { path: "/" });
     localStorage.removeItem("user");
     setAuth(false);
-    navigate(`/`);
+    navigate(`/login`);
   };
 
   const data = {

@@ -2,8 +2,6 @@ import React from "react";
 import { Form, Button, InputGroup, FormControl } from "react-bootstrap";
 import useAuth from "../hooks/useAuth";
 import "../styles/FormAuth.css";
-import Message from "./Message";
-import Modal from "./Modal";
 
 const FormAuth = ({ setLogin }) => {
   const { handleSubmit, form, handleForm, error } = useAuth();
@@ -86,11 +84,6 @@ const FormAuth = ({ setLogin }) => {
           </Button>
         )}
       </Form>
-      {loading ? (
-        <Modal change={true}>
-          <Message error={error} />
-        </Modal>
-      ) : null}
     </>
   );
 };

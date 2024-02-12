@@ -1,6 +1,6 @@
 import React from "react";
 import DropDown from "../components/DropDown";
-import Logo from "../assets/devchallenges-light.svg";
+import Logo from "../assets/todo.svg";
 import "../styles/UserHeader.css";
 
 const UserHeader = ({ user }) => {
@@ -9,7 +9,7 @@ const UserHeader = ({ user }) => {
       <img src={Logo} alt="" />
       <div className="userContainer--header__icon">
         {user.picture ? (
-          <img src={user.picture} alt="userPhoto" />
+          <img src={user.picture_url} alt="userPhoto" />
         ) : (
           <span className="userPicture_none" id="userPicture_none--header_icon">
             {user.email[0]}

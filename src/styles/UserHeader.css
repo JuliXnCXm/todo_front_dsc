@@ -13,6 +13,21 @@
     margin-bottom: 20px;
 }
 
+
+.userContainer--header > img {
+    width: 46px;
+    height: 46px;
+    border-radius: 10px;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+
+
+
+
+
+
 .userContainer--header__icon {
     display: flex;
     height: 60px;

@@ -8,13 +8,9 @@ const DropDown = () => {
   return (
     <div className="dropDown">
       <ul className="dropDown__menu">
-        <li id="option">
+        <li id="option"onClick={() => window.location.href = "/user"}>
           <span class="material-icons">account_circle</span>
           <span>My Profile</span>
-        </li>
-        <li id="option">
-          <span class="material-icons">group</span>
-          <span>Group chat</span>
         </li>
         <div className="Line"></div>
         <li id="option" className="logout" onClick={handleLogout}>

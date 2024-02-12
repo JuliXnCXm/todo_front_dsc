@@ -23,7 +23,6 @@ const useAuth = () => {
   });
   const [isLogin, setIsLogin] = useState(false);
   const { handleLogin, auth, handleRegister } = useContext(AuthContext);
-  const navigate = useNavigate();
 
   const handleForm = (e) => {
     setForm({
